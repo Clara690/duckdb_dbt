@@ -2,7 +2,7 @@ name: analytics # what the project is called
 
 # connection in ~/.dbt/profiles.yml -> the warehouse
 # the name is the same with the first line .dbt/profiles.yml -> profile name must match project name
-profile: analytics 
+profile: analytics
 
 seed-paths: ["seeds"]
 model-paths: ["models"]
@@ -19,3 +19,5 @@ clean-targets: # what dbt clean deletes; adds dbt_packages
 # models: # list the materialized defaults
 #   analytics:
 
+flags:
+  require_generic_test_arguments_property: true
