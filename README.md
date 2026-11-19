@@ -29,8 +29,16 @@ dbt seed
 This loads the files in the `/seeds` folder and turn them into tables populating the database.
 
 ```
-dbt run
+dbt run 
 ```
+Alternatively, one can use the `--select--` flag to specify the model to build in the case where there might be hundreds of or more models. 
+
+```
+dbt run --select {model}
+dbt run --select +{model} # this builds the model and everything upstream 
+dbt run --select {model}+ # this builds the model and everything downstream
+```
+
 This compiles each model to SQL (tables/ views) then runs it.
 
 📍 Note that the model refers to `.sql` files that describe a table/ view. By default, a model generates a view. 
