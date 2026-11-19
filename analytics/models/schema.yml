@@ -1,0 +1,50 @@
+models:
+  - name: job_postings
+    description: "Cleaned postings"
+    config:
+      persist_doc: true
+      columns: true
+    columns:
+      - name: job_id
+        description: "Unique identifier for the job posting"
+      - name: job_title
+        description: "Title of the job posting"
+      - name: company_name
+        description: "Name of the company posting the job"
+      - name: job_location
+        description: "Location of the job"
+      - name: job_via
+        description: "Source through which the job was posted"
+      - name: job_schedule_type
+        description: "Type of job schedule"
+      - name: job_work_from_home
+        description: "Indicates if the job allows working from home"
+      - name: search_date
+        description: "Date when the job was searched"
+      - name: search_term
+        description: "Search term used to find the job"
+
+  - name: jobs_per_month
+    description: "Number of job postings per month"
+    config:
+        persist_doc: true
+        columns: true
+    columns:
+      - name: month
+        description: "Month of the job postings"
+      - name: role
+        description: "Search term"
+      - name: postings
+        description: "Number of job postings in the month"
+
+  - name: top_locations
+    description: "Top 10 locations by job count"
+    config:
+      persist_doc: true
+      columns: true
+    columns:
+      - name: job_location
+        description: "Location of the job, the grain"
+      - name: postings
+        description: "Postings counted for the location"
+  
