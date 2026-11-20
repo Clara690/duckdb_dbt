@@ -47,3 +47,21 @@ This compiles each model to SQL (tables/ views) then runs it.
 dbt compile 
 ```
 This compiles each model to SQL but does NOT run anything.
+
+### Data Quality 
+
+By running the following command, one can implement generic, singular and unit tests to ensure data quality.
+
+```
+dbt test
+```
+
+### Other Commands
+
+```
+dbt build
+```
+
+`dbt build` = `dbt seed` + `dbt run` + `dbt test` 
+
+These commands run in a DAG manner, if any of the processes goes wrong, the downstream procedure stops. 

@@ -10,6 +10,8 @@ models:
         description: "Unique identifier for the job posting"
       - name: job_title
         description: "Title of the job posting"
+        tests:
+          - not_null 
       - name: company_name
         description: "Name of the company posting the job"
       - name: job_location
@@ -54,12 +56,15 @@ models:
   - name: monthly_summary
     description: Monthly summary of job postings; one row per month.
     config:
-      persist_docs:
-        relation: true
+      meta:
+        persist_doc: true
         columns: true
     columns:
       - name: month
         description: Year and month of the summary.
+        tests:
+          - not_null
+          - unique
       - name: total_postings
         description: All postings that month (summed from jobs_per_month).
       - name: remote_postings
