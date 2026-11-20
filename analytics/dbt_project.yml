@@ -16,8 +16,8 @@ clean-targets: # what dbt clean deletes; adds dbt_packages
 #   analytics:
 #     +schema: raw
 
-# models: # list the materialized defaults
-#   analytics:
-
+models: # list the materialized defaults
+  analytics:
+    +materialized: table
 flags:
   require_generic_test_arguments_property: true
