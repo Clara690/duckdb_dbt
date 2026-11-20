@@ -1,0 +1,8 @@
+analytics:
+# this file specifies the database and the connection details for it.
+  target: prod # the name of the target environment to use by default
+  outputs: 
+    prod: 
+      type: duckdb
+      path: ../data/prod.duckdb
+      threads: 4
